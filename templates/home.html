@@ -1,0 +1,71 @@
+{% extends 'base.html' %} {% block content %}
+<form method="post" class="flex flex-col justify-center mt-28">
+  <svg
+    class="w-20 h-20 text-gray-800 inline-block self-center mb-8"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5"
+    ></path>
+  </svg>
+  <h3 class="mb-8 uppercase text-2xl text-center text-gray-800">
+    Enter The Chat Room
+  </h3>
+  <div>
+    <label
+      for="name"
+      class="block mb-2 text-center text-lg font-medium text-gray-800 dark:text-white"
+      >Name:
+    </label>
+    <input
+      type="text"
+      id="name"
+      aria-describedby="helper-text-explanation"
+      class="bg-gray-50 mb-2 border border-gray-300 text-gray-800 text-sm rounded-lg block w-full p-2.5"
+      placeholder="Pick a name"
+      name="name"
+      value="{{name}}"
+    />
+  </div>
+  <div class="flex flex-col text-gray-800 space-y-2">
+    <label
+      for="name"
+      class="block mb-2 text-center text-lg font-medium text-gray-800 dark:text-white"
+      >Code:
+    </label>
+    <input
+      class="bg-gray-50 mb-5 border border-gray-300 text-gray-800 text-sm rounded-lg block w-full p-2.5"
+      type="text"
+      placeholder="Room Code"
+      name="code"
+      value="{{code}}"
+    />
+    <button
+      type="text"
+      name="join"
+      class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-800 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white"
+    >
+      Join a Chat Room
+    </button>
+  </div>
+  <button
+    class="mt-2 inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-800 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white"
+    type="submit"
+    name="create"
+  >
+    Start a Chat Room
+  </button>
+  {% if error %}
+  <ul>
+    <li>{{error}}</li>
+  </ul>
+  {% endif %}
+</form>
+{% endblock %}
